@@ -36,7 +36,7 @@ def counter(filename):
                 Gcount += 1
             if prilagatelnoe(word):
                 Pcount += 1
-    return{'Number of verbs: ': Gcount, 'Number of adjectives: ': Pcount, 'Number of pronouns': Mcount}
+    return {'Number of verbs: ': Gcount, 'Number of adjectives: ': Pcount, 'Number of pronouns': Mcount}
 
 print(counter('ChastiRechi.txt'))
 
