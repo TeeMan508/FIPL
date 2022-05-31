@@ -20,7 +20,7 @@ class MailSpam(object):
         body = "\r\n".join((
             "From: %s" % self.user,
             "To: %s" % to[:len(to)-1],
-            "Subject: test",
+            "Subject: test", #INSTEAD OF "Test" YOU HAVE TO WRITE SUBJECT YOU WANT TO SEND
             "",
             self.data
         ))
@@ -30,13 +30,15 @@ class MailSpam(object):
         server.quit()
 
 
-text = "Hello World"
+text = "Hello World" #HERE YOU NEED TO TYPE TEXT YOU WANT TO SEND
 
-data = pd.read_excel("Test.xlsx", header=None).values.tolist()
+data = pd.read_excel("Test.xlsx", header=None).values.tolist() #INSTEAD OF "Test.xlsx" YO NEED TO TYPE FULL PATH TO EXXCEL FILE WITH EMAILS
 res = []
+
 for arg in data:
     res.append(arg[0])
 print(res)
+
 participants_list = res
 test = MailSpam(text, participants_list)
 test.send_data()
