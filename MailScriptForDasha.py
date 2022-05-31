@@ -30,9 +30,15 @@ class MailSpam(object):
         server.quit()
 
 
-data = "Hello World"
-participants_list = ["dapizs857@gmail.com", "t.shshudro@g.nsu.ru"]
-test = MailSpam(data, participants_list)
+text = "Hello World"
+
+data = pd.read_excel("Test.xlsx", header=None).values.tolist()
+res = []
+for arg in data:
+    res.append(arg[0])
+print(res)
+participants_list = res
+test = MailSpam(text, participants_list)
 test.send_data()
 
 
